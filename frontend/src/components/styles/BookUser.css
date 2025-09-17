@@ -1,0 +1,312 @@
+.error {
+  color: red;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px 20px 0 0;
+}
+
+.icon-loan:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  color: #fff
+}
+
+.icon-loan {
+  background-color: var(--button-bg-light);
+  padding: 0.7rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.45em;
+  border-radius: 7px;
+  border: 1px solid var(--bg-dark);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* Espacio entre la barra de búsqueda y el filtro */
+  padding-top: 30px;
+  padding-left: 50px;
+  justify-items: center;
+}
+
+.dropdown-book {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  align-items: center;
+}
+
+.button-loan {
+  width: 10%;
+  margin-left: 87%;;
+}
+.book-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: transparent;
+  justify-items: center;
+}
+
+.loan-card {
+  border-color: black;
+  border-width: 100px;
+}
+
+.loan-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: transparent;
+  justify-items: center;
+  color: black;
+}
+
+.book-card {
+  display: flex;
+  padding-top: 20px;
+  background: transparent;
+  cursor: pointer;
+  height: 300px;
+}
+
+.book-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.book-popup .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.book-popup .button-group button {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.book-popup .button-group .save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.book-popup .button-group .cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.book-popup .button-group button:hover {
+  opacity: 0.8;
+}
+
+/* Fondo oscuro cuando el popup está activo */
+.book-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.book-popup {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 20px;
+  overflow: hidden;
+}
+
+.loan-popup {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 70%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 20px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.book-popup h2 {
+  color: gray;
+  text-align: center;
+  margin: 0;
+  cursor: default;
+}
+.info-container p {
+  color: black;
+  padding: 0%;
+  margin: 1%;
+  white-space: nowrap; /* Evita que el texto haga salto de línea */
+  overflow: hidden; /* Oculta el contenido que se salga */
+}
+
+.info-container strong {
+  padding: 0%;
+}
+
+/* Contenedor de la imagen */
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+/* Contenedor de información */
+.info-container {
+  flex: 1;
+  display: flex;
+  align-items: last baseline;
+  flex-direction: column;
+  cursor: default;
+}
+/* Contenedor de botones */
+
+.book-popup-actions {
+  display: flex;
+  margin-left: 25%;
+}
+
+/* Imagen dentro del popup */
+.popup-image {
+  height: 400px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Estilos del popup de libros en préstamo */
+.loan-popup {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 70%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.loan-popup h2 {
+  text-align: center;
+  color: gray;
+  margin: 0;
+  cursor: default;
+}
+
+.loan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+/* Tarjeta de cada libro en préstamo: imagen a la izquierda y datos a la derecha */
+.loan-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 90%;
+  max-width: 450px;
+  height: 100%;
+  gap: 10px;
+}
+
+.img-container-loan {
+  flex-shrink: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.popup-image-loan {
+  max-width: 200px;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Información del libro a la derecha de la imagen */
+.loan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.loan-info p {
+  margin: 0;
+}
+
+/* Botón para cerrar el popup de préstamos */
+.loan-popup-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.loan-popup-actions button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.loan-popup-actions button:hover {
+  opacity: 0.8;
+}

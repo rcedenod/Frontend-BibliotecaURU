@@ -1,0 +1,253 @@
+/* Variables globales para la identidad visual */
+:root {
+  /* Paleta de colores */
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --bg-light: #ffffff;
+  --bg-dark: #242424;
+  --text-light: rgba(255, 255, 255, 0.87);
+  --text-dark: #213547;
+  --button-bg-light: #f9f9f9;
+  --button-bg-dark: #1a1a1a;
+  --button-hover-bg: var(--primary-color);
+  --button-hover-border: var(--primary-color);
+
+  /* Estilos tipográficos */
+  --font-family-base: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height-base: 1.5;
+
+  /* Colores para la landing */
+  --landing-bg-color: var(--bg-light);
+  --landing-text-color: var(--text-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --landing-bg-color: var(--bg-dark);
+    --landing-text-color: var(--text-light);
+  }
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  background-color: var(--landing-bg-color);
+  color: var(--landing-text-color);
+  /* Se usa flex para centrar el contenido, pero la landing ocupará toda la ventana */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh; /* Ocupa el 100% de la altura de la ventana */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal para vistas con header fijo (dashboard, etc.) */
+.app-container {
+  display: block;             /* Evitamos el centrado vertical */
+}
+
+/* Si #root restringe el ancho, se puede omitir para la landing */
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Landing Page: ocupa toda la ventana */
+.landing {
+  position: relative;
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 100vh;    /* Ocupa el 100% de la altura de la ventana */
+  width: 100%;      /* Ocupa el 100% del ancho de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Header de la landing: logo a la izquierda y botones a la derecha */
+.landing-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para el header */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.app-logo {
+  height: 50px;
+}
+
+.landing-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.landing-nav button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--button-bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-color: var(--bg-dark);
+}
+
+.landing-nav button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  color: #fff;
+}
+
+/* Sección Hero de la landing */
+.landing-hero {
+  display: inline-block;           /* Se ajusta al ancho del contenido */
+  background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center;
+  z-index: 1;
+  color: var(--bg-dark);
+  padding: 1rem 2rem;              /* Espaciado interno para separar el texto del borde */
+  border-radius: 12px;             /* Bordes redondeados */
+  margin: 0 auto;                  /* Centrar el bloque */
+  cursor: default;                 /* Cambia el cursor al pasar sobre el bloque */
+}
+
+
+.landing-hero h1 {
+  font-size: 4em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.landing-hero p {
+  font-size: 1.5em;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botones generales (para secciones internas) */
+button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--button-bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  color: #fff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Transición de Fade In para las vistas */
+.fade-in {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dashboard-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; /* Opcional: deja un espacio uniforme entre los hijos */
+  z-index: 9999;
+}
+
+/* Si deseas controlar cómo se comporta cada bloque */
+.dashboard-logo,
+.dashboard-logout {
+  flex: 0 0 auto; /* Mantienen su tamaño natural */
+}
+
+.dashboard-menu {
+  flex: 1 1 auto;  /* Se expande para ocupar el espacio intermedio */
+  display: flex;
+  justify-content: center; /* Centra su contenido, por ejemplo */
+}
+
+.dashboard-logout {
+  flex: 0 0 auto;
+  margin-right: 3%;
+}
+
+.dashboard-logout button {
+  border: 1px solid var(--bg-dark);
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--button-bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dashboard-logout button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  color: #fff;
+}
+
+/* Para que el contenido del dashboard no quede oculto detrás del header */
+.dashboard-content {
+  padding-top: 70px;
+  width: 100%;
+  box-sizing: border-box;
+}

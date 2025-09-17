@@ -1,0 +1,297 @@
+/* Contenedor principal del mantenimiento */
+.methods-maintenance {
+    margin: 2rem;
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+  }
+  
+  /* Encabezado y acciones */
+  .methods-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .methods-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    cursor: default;
+    color: var(--text-dark);
+  }
+  
+  /* En modo oscuro, cambia el color del título y estilos de acciones */
+  @media (prefers-color-scheme: dark) {
+    .methods-header h1 {
+      color: var(--text-light);
+    }
+  
+    .methods-actions .icon-trash {
+      background-color: var(--button-bg-light);
+      padding: 0.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--bg-dark);
+    }
+  
+    .methods-actions .icon-add {
+      background-color: var(--button-bg-light);
+      padding: 0.7rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.45em;
+      border-radius: 12px;
+      border: 1px solid var(--bg-dark);
+      font-size: 1rem;
+    }
+  
+    .methods-actions .icon-add:hover {
+      background-color: var(--button-hover-bg);
+      border-color: var(--button-hover-border);
+      color: #fff;
+    }
+    
+    .methods-actions .icon-trash:hover {
+      background-color: var(--button-hover-bg);
+      border-color: var(--button-hover-border);
+      color: #fff;
+    }
+  }
+  
+  .methods-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  
+  .methods-actions .icon-trash {
+    background-color: var(--button-bg-light);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--bg-dark);
+  }
+  
+  .methods-actions .icon-add {
+    background-color: var(--button-bg-light);
+    padding: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.45em;
+    border-radius: 12px;
+    border: 1px solid var(--bg-dark);
+    font-size: 1rem;
+  }
+  
+  .methods-actions .icon-add:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    color: #fff;
+  }
+  
+  .methods-actions .icon-trash:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    color: #fff;
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+  }
+  
+  /* Contenedor de la tabla */
+  .methods-table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    background-color: var(--bg-light); /* Fondo claro para el contenedor */
+    cursor: default;
+  }
+  
+  /* Estilo de la tabla */
+  .methods-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-light); /* Fondo claro para la tabla */
+  }
+  
+  .methods-table th,
+  .methods-table td {
+    border: 1px solid var(--bg-dark);
+    padding: 0.75rem;
+    text-align: center;
+    font-family: var(--font-family-base);
+  }
+  
+  /* Encabezado de la tabla */
+  .methods-table thead {
+    background-color: var(--bg-light);
+  }
+  
+  /* Ícono de edición */
+  .edit-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+  }
+  
+  /* Popup overlay */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+  }
+  
+  /* Popup */
+  .popup {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+  }
+  
+  /* Acciones del popup */
+  .popup-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* Estilos para inputs en popups */
+  .popup input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--bg-dark);
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+  }
+  
+  /* Ajustes generales */
+  body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Contenedor del checkbox para personalizarlo */
+  .custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  /* Ocultar el checkbox original */
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Estilo del checkbox personalizado */
+  .custom-checkbox span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-light);
+    border: 1px solid var(--bg-dark);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Estilo cuando el checkbox está marcado */
+  .custom-checkbox input:checked + span {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* Agregar un icono de check */
+  .custom-checkbox input:checked + span::after {
+    content: "✔";
+    font-size: 0.8rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Efecto hover */
+  .custom-checkbox:hover span {
+    border-color: var(--secondary-color);
+  }
+  
+  /* Efecto focus */
+  .custom-checkbox input:focus + span {
+    box-shadow: 0 0 5px var(--secondary-color);
+  }
+  
+  /* Estilos generales para el Dropdown */
+.p-dropdown {
+    width: 100%;
+    border: 1px solid var(--bg-dark);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+  }
+  
+  /* Cuando se enfoca (click o tab) */
+  .p-dropdown:focus,
+  .p-dropdown.p-focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color-light);
+  }
+  
+  /* Opciones del menú desplegable */
+  .p-dropdown-panel {
+    z-index: 10000 !important;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    width: 10% !important;
+  }
+  
+  /* Estilo de los ítems */
+  .p-dropdown-item {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .p-dropdown-item.p-highlight {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .dropdown-container label {
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+  

@@ -1,0 +1,158 @@
+/* RegisterForm.css */
+
+/* Contenedor principal del formulario */
+.register-form-container {
+    background: rgba(255, 255, 255, 0.9);         /* Fondo blanco semitransparente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);      /* Sombra sutil para dar profundidad */
+    border-radius: 12px;                           /* Bordes redondeados para un look moderno */
+    padding: 2rem;                                 /* Espaciado interno generoso */
+    max-width: 600px;                              /* Mayor ancho para permitir filas horizontales */
+    width: 90%;                                    /* Ancho responsivo: 90% del viewport en móviles */
+    margin: 2rem auto;                             /* Centrado horizontal con margen vertical */
+    display: flex;
+    flex-direction: column;                        /* Disposición vertical del contenedor */
+    align-items: stretch;                          /* Los elementos se estiran a lo ancho del contenedor */
+  }
+  
+  /* Fondo general (igual que en LoginForm) */
+  .background {
+    position: relative;
+    background: url('background.jpg') no-repeat center center/cover;
+    height: 100vh;    /* Ocupa el 100% de la altura de la ventana */
+    width: 100%;      /* Ocupa el 100% del ancho de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* Título del formulario */
+  .register-form-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: -0.7rem;
+    color: var(--text-dark);
+  }
+  
+  /* Estilo para las etiquetas */
+  .register-form-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+  
+  /* Campos de entrada (inputs) */
+  .register-form-container input[type="text"],
+  .register-form-container input[type="email"],
+  .register-form-container input[type="password"],
+  .register-form-container input[type="date"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--bg-dark);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .register-form-container input[type="text"]:focus,
+  .register-form-container input[type="email"]:focus,
+  .register-form-container input[type="password"]:focus,
+  .register-form-container input[type="date"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  /* Mensaje de respuesta del servidor */
+  .register-form-container #srv-response {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  /* Estilo de los botones */
+  .register-form-container button {
+    display: block;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: var(--button-bg-light);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin: 0.5rem 0;
+    border-color: var(--bg-dark);
+  }
+  
+  .register-form-container button:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    color: #fff;
+  }
+  
+  .register-form-container button:focus,
+  .register-form-container button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+  /* Estilo específico para el botón "Volver" */
+  .back-button {
+    display: inline-flex; /* Se ajusta al contenido */
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem !important;
+    width: fit-content !important;
+    margin-bottom: 1rem;
+  }
+  
+  .back-icon {
+    font-size: 1em;
+    margin-right: 0.5rem;
+  }
+  
+  /* Botón principal "Registrarse" con separación extra */
+  .primary-button {
+    margin-bottom: 1rem;
+  }
+  
+  /* Nuevas clases para organizar campos en filas */
+  .row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: -0.7rem;
+  }
+  
+  .column {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  /* Estilos responsivos para dispositivos móviles */
+  @media (max-width: 480px) {
+    .register-form-container {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+    
+    .register-form-container h2 {
+      font-size: 2em;
+    }
+    
+    .row {
+      flex-direction: column;
+    }
+  }
+  

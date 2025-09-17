@@ -1,0 +1,56 @@
+/* Menubar principal */
+.custom-menubar {
+  background-color: var(--button-bg-light); /* Usamos el color de fondo de botones para mantener consistencia */
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}
+
+/* Lista principal de ítems */
+.custom-menubar .p-menubar-root-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* Estilos para cada opción del menú */
+.custom-menubar .p-menuitem > a {
+  color: var(--text-dark);
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 12px;
+}
+
+/* Estilos para submenús (desplegables) */
+.custom-menubar .p-submenu {
+  background-color: var(--button-bg-light);
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.p-submenu-list {
+  border-radius: 12px;
+}
+
+.p-menuitem-link {
+  border-radius: 12px;
+}
+
+/* Hover para cada opción del menú */
+.custom-menubar .p-menuitem > a:hover,
+.custom-menubar .p-menuitem-link:hover {
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.p-menuitem-content {
+  border-radius: 12px;
+}

@@ -1,0 +1,445 @@
+.books-maintenance {
+  margin: 2rem;
+  font-family: var(--font-family-base);
+  color: var(--text-dark);
+  margin-top: 20px;
+}
+
+/* Encabezado y acciones */
+.books-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.books-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  cursor: default;
+  color: var(--text-dark);
+}
+
+/* En modo oscuro, cambia el color del título */
+@media (prefers-color-scheme: dark) {
+  .books-header h1 {
+    color: var(--text-light);
+  }
+
+  .books-actions .icon-trash {
+    background-color: var(--button-bg-light);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--bg-dark);
+  }
+
+  .books-actions .icon-add {
+    background-color: var(--button-bg-light);
+    padding: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.45em;
+    border-radius: 12px;
+    border: 1px solid var(--bg-dark);
+    font-size: 1rem;
+  }
+
+  .books-actions .icon-add:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    color: #fff;
+  }
+
+  .books-actions .icon-trash:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-border);
+    color: #fff;
+  }
+}
+
+.books-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.books-actions .icon-trash {
+  background-color: var(--button-bg-light);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--bg-dark);
+}
+
+.books-actions .icon-add {
+  background-color: var(--button-bg-light);
+  padding: 0.7rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.45em;
+  border-radius: 12px;
+  border: 1px solid var(--bg-dark);
+  font-size: 1rem;
+}
+
+.books-actions .icon-post {
+  background-color: var(--button-bg-light);
+  padding: 0.7rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.45em;
+  border-radius: 12px;
+  border: 1px solid var(--bg-dark);
+  font-size: 1rem;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.form-row-5 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.form-port {
+  width: 100%;
+}
+.form-port input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--bg-dark);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  font-family: var(--font-family-base);
+}
+
+.form-row-1 input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--bg-dark);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  font-family: var(--font-family-base);
+}
+
+.form-row-2 input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--bg-dark);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 170px;
+  font-family: var(--font-family-base);
+}
+
+/* Barra de búsqueda */
+.search-bar-books {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.search-bar-books input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--bg-dark);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  font-family: var(--font-family-base);
+}
+
+/* Contenedor de la tabla */
+.books-table-container {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  background-color: var(--bg-light); /* Fondo blanco para el contenedor */
+  cursor: default;
+}
+
+/* Estilo de la tabla */
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-light); /* Fondo blanco para la tabla */
+}
+
+.books-table th,
+.books-table td {
+  border: 1px solid var(--bg-dark);
+  padding: 0.75rem;
+  text-align: center;
+  font-family: var(--font-family-base);
+}
+
+/* El encabezado de la tabla */
+.books-table thead {
+  background-color: var(--bg-light);
+}
+
+/* Ícono de edición */
+.edit-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--bg-dark);
+  background-color: var(--bg-light);
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ajustes generales */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para checkbox personalizado */
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-checkbox span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-dark);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked + span {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.custom-checkbox input:checked + span::after {
+  content: "✔";
+  font-size: 0.8rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-checkbox:hover span {
+  border-color: var(--secondary-color);
+}
+
+.custom-checkbox input:focus + span {
+  box-shadow: 0 0 5px var(--secondary-color);
+}
+
+.book-image {
+  width: auto;
+  height: 100px;
+}
+
+/* Estilos generales para los popups */
+.bookm-popup {
+  margin-top: 2.5%;
+  min-width: 650px; /* Asegurar un tamaño mínimo */
+  max-width: none; /* Eliminar la restricción de tamaño máximo */
+  min-height: 650px; /* Altura mínima */
+  height: 10%;
+  background: white;
+  padding: 50px; /* Aumentar padding */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Asegurar que esté sobre otros elementos */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+}
+
+.bookm-popup h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-top: -15px;
+}
+
+.form-row-1 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.form-title {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-isbn {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.form-row-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.form-doc {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-lang {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dropdown {
+  margin-top: 17px;
+}
+
+.form-row-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.form-ubi {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-cat {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-row-6 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.form-aut {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-edit {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookm-popup .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.bookm-popup .button-group button {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bookm-popup .button-group .save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.bookm-popup .button-group .cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.bookm-popup .button-group button:hover {
+  opacity: 0.8;
+}
+
+.bookm-popup-actions {
+  margin-left: 30%;
+}
+
+/* Fondo oscuro cuando el popup está activo */
+.bookm-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}

@@ -1,0 +1,149 @@
+/* LoginForm.css */
+
+/* Contenedor principal del formulario */
+.login-form-container {
+  background: rgba(255, 255, 255, 0.9);         /* Fondo blanco semitransparente */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);      /* Sombra sutil para dar profundidad */
+  border-radius: 12px;                           /* Bordes redondeados para un look moderno */
+  padding: 2rem;                                 /* Espaciado interno generoso */
+  max-width: 400px;                              /* Ancho máximo para mantener la legibilidad */
+  width: 90%;                                    /* Ancho responsivo: 90% del viewport en móviles */
+  margin: 2rem auto;                             /* Centrado horizontal con margen vertical */
+  display: flex;
+  max-height: 100%;
+  flex-direction: column;                        /* Disposición vertical de los elementos */
+  align-items: stretch;                          /* Los elementos se estiran a lo ancho del contenedor */
+}
+
+.background{
+  position: relative;
+  background: url('background.jpg') no-repeat center center/cover;
+  height: 100vh;    /* Ocupa el 100% de la altura de la ventana */
+  width: 100%;      /* Ocupa el 100% del ancho de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Título del formulario */
+.login-form-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 1rem;
+  margin-top: -0.2rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+/* Estilo para las etiquetas */
+.login-form-container label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Campos de entrada (inputs) */
+.login-form-container input[type="text"],
+.login-form-container input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  border-color: var(--bg-dark);
+}
+
+.login-form-container input[type="text"]:focus,
+.login-form-container input[type="password"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Mensaje de respuesta del servidor */
+.login-form-container #srv-response {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Estilo de los botones */
+.login-form-container button {
+  display: block;
+  width: 100%;                                /* Botón a ancho completo */
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--button-bg-light);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  margin: 0.5rem 0;                           /* Margen vertical entre botones */
+  border-color: var(--bg-dark);
+}
+
+.back-button {
+  display: inline-flex; /* Asegura que el botón solo ocupe lo necesario */
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem !important;
+  width: fit-content !important; /* Hace que el botón solo ocupe el espacio de su contenido */
+}
+
+.back-icon {
+  font-size: 1em;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.login-form-container button:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+  color: #fff;
+}
+
+.login-form-container button:focus,
+.login-form-container button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 480px) {
+  .login-form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .login-form-container h2 {
+    font-size: 2em;
+  }
+}
+
+/* Botón principal "Iniciar sesión" con separación extra */
+.primary-button {
+  margin-bottom: 1rem;
+}
+
+/* Contenedor para la sección de "Olvidaste tus datos?" */
+.forgot-data-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.forgot-data-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
